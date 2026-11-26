@@ -153,7 +153,7 @@ box-sizing: border-box;
 /* Pizza Recipe Page */
 
 .recipe-page {
-    background-image: url("images/Pizza.jpg");
+    background-image: url("Pizza.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -220,36 +220,36 @@ box-sizing: border-box;
 /* Burger Recipe Background */
 
 .burger-page {
-    background-image: url("images/DoubleCheeseburger.jpg");
+    background-image: url("DoubleCheeseburger.jpg");
 }
 /* Potato Balls Recipe Background */
 
 .potato-page {
-    background-image: url("images/Potato Balls.jpg");
+    background-image: url("Potato Balls.jpg");
 }
 /* French Fries Recipe Background */
 
 .fries-page {
-    background-image: url("images/French Fries.jpg");
+    background-image: url("French Fries.jpg");
 }
 
 .mahjouba-page {
-    background-image: url("images/Mahjouba.jpg");
+    background-image: url("Mahjouba.jpg");
 }
 
 .tajine-jben-page {
-    background-image: url("images/Tajine Jben .jpg");
+    background-image: url("Tajine Jben .jpg");
 }
 .brownies-page {
-    background-image: url("images/Brownies.jpg");
+    background-image: url("Brownies.jpg");
 }
 
 .cookies-page {
-    background-image: url("images/Cookies.jpg");
+    background-image: url("Cookies.jpg");
 }
 
 .tamina-page {
-    background-image: url("images/Tamina.jpg");
+    background-image: url("Tamina.jpg");
 }
 .site-header {
     position: relative;
