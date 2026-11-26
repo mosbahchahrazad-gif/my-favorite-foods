@@ -1,0 +1,249 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>My Favorite Foods</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header id="top" class="site-header">
+
+    <img src="images/logo.png" alt="My Favorite Foods Logo">
+
+    <div class="header-text">
+
+        <h1>My Favorite Foods</h1>
+
+        <p id="welcome"></p>
+
+    </div>
+
+</header>
+<nav class="navbar">
+
+    <a href="#top">Home</a>
+
+    <a href="#fast-food">Fast Food</a>
+
+    <a href="#traditional">Traditional Food</a>
+
+    <a href="#desserts">Desserts</a>
+
+    <a href="#about">About</a>
+
+    <a href="#feedback">Feedback</a>
+
+    <a href="index.html">Logout</a>
+
+</nav>
+
+
+    <h2 id="home">Discover My Favorite Foods!</h2>
+
+    <p>Explore delicious recipes from different categories.</p>
+
+   <section id="fast-food">
+
+    <h2>Fast Food</h2>
+    <p>Discover my favorite fast food recipes.</p>
+
+    <div class="food-container">
+
+        <div class="food-card">
+            <a href="pizza.html">
+                <img src="images/Pizza.jpg" alt="Pizza">
+            </a>
+            <h3>Pizza</h3>
+            <a href="pizza.html" class="recipe-button">View Recipe</a>
+        </div>
+
+        <div class="food-card">
+            <a href="burger.html">
+                <img src="images/DoubleCheeseburger.jpg" alt="Burger">
+            </a>
+            <h3>Burger</h3>
+            <a href="burger.html" class="recipe-button">View Recipe</a>
+        </div>
+
+        <div class="food-card">
+            <a href="potato-balls.html">
+                <img src="images/Potato Balls.jpg" alt="Potato Balls">
+            </a>
+            <h3>Potato Balls</h3>
+            <a href="potato-balls.html" class="recipe-button">View Recipe</a>
+        </div>
+
+        <div class="food-card">
+            <a href="french-fries.html">
+                <img src="images/French Fries.jpg" alt="French Fries">
+            </a>
+            <h3>French Fries</h3>
+            <a href="french-fries.html" class="recipe-button">View Recipe</a>
+        </div>
+
+    </div>
+
+</section>
+   <section id="traditional">
+    <h2>Traditional Food</h2>
+    <p>Discover delicious traditional dishes.</p>
+
+    <div class="food-container">
+
+        <div class="food-card">
+            <a href="mahjouba.html">
+                <img src="images/Mahjouba.jpg" alt="Mahjouba">
+            </a>
+            <h3>Mahjouba</h3>
+            <a href="mahjouba.html" class="recipe-button">View Recipe</a>
+        </div>
+
+        <div class="food-card">
+            <a href="tajine-jben.html">
+                <img src="images/Tajine Jben .jpg" alt="Tajine Jben">
+            </a>
+            <h3>Tajine Jben</h3>
+            <a href="tajine-jben.html" class="recipe-button">View Recipe</a>
+        </div>
+
+    </div>
+</section>
+
+    <section id="desserts">
+
+    <h2>Desserts</h2>
+    <p>Discover sweet and delicious desserts.</p>
+
+    <div class="food-container">
+
+        <div class="food-card">
+            <a href="brownies.html">
+                <img src="images/Brownies.jpg" alt="Brownies">
+            </a>
+            <h3>Brownies</h3>
+            <a href="brownies.html" class="recipe-button">View Recipe</a>
+        </div>
+
+        <div class="food-card">
+            <a href="cookies.html">
+                <img src="images/Cookies.jpg" alt="Cookies">
+            </a>
+            <h3>Cookies</h3>
+            <a href="cookies.html" class="recipe-button">View Recipe</a>
+        </div>
+
+        <div class="food-card">
+            <a href="tamina.html">
+                <img src="images/Tamina.jpg" alt="Tamina">
+            </a>
+            <h3>Tamina</h3>
+            <a href="tamina.html" class="recipe-button">View Recipe</a>
+        </div>
+
+    </div>
+
+</section>
+<section id="about">
+
+    <h2>About My Website</h2>
+
+    <p>
+        My Favorite Foods is a small recipe website
+        where you can discover delicious dishes.
+        It includes fast food, traditional recipes
+        and sweet desserts.
+        Explore the recipes and enjoy cooking!
+    </p>
+
+    <p class="author">
+        Created by: Chahrazad Mosbah
+    </p>
+
+    <p>
+        My Favorite Foods © 2026
+    </p>
+
+</section>
+
+<section id="feedback">
+
+    <h2>Share Your Opinion</h2>
+
+    <p>How would you rate our website?</p>
+
+    <div class="stars">
+        <span onclick="rate(1)">★</span>
+        <span onclick="rate(2)">★</span>
+        <span onclick="rate(3)">★</span>
+        <span onclick="rate(4)">★</span>
+        <span onclick="rate(5)">★</span>
+    </div>
+
+    <p id="ratingMessage">Choose your rating!</p>
+
+    <textarea id="opinion"
+    placeholder="Write your opinion here..."></textarea>
+
+    <br><br>
+
+    <button onclick="submitFeedback()">Submit</button>
+
+</section>
+
+    <script>
+       var username = sessionStorage.getItem("username");
+
+if (!username) {
+    var address = window.location.search;
+    username = address.substring(6);
+    username = decodeURIComponent(username);
+    sessionStorage.setItem("username", username);
+}
+
+document.getElementById("welcome").innerHTML =
+"Welcome, " + username + "!";
+var selectedRating = 0;
+
+function rate(number) {
+
+    selectedRating = number;
+
+    var stars = document.querySelectorAll(".stars span");
+
+    for (var i = 0; i < 5; i++) {
+
+        if (i < number) {
+            stars[i].classList.add("active");
+        } else {
+            stars[i].classList.remove("active");
+        }
+
+    }
+
+    document.getElementById("ratingMessage").innerHTML =
+    "You rated us " + number + " out of 5 stars!";
+
+}
+
+function submitFeedback() {
+
+    var opinion = document.getElementById("opinion").value;
+
+    if (selectedRating == 0) {
+        alert("Please choose a star rating!");
+    }
+    else if (opinion.trim() == "") {
+        alert("Please write your opinion!");
+    }
+    else {
+        alert("Thank you for your feedback!");
+    }
+
+}
+    </script>
+
+</body>
+</html>
